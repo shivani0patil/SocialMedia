@@ -1,5 +1,9 @@
 package com.generic.ListenerUtility;
 
+import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -20,38 +24,17 @@ public class BaseClass {
 	
 	
 	PropertyFile p=new PropertyFile();
-	 public WebDriver driver=null;
+	public WebDriver driver=null;
 	static  WebDriver  sdriver;
+	public HomePage h;
+	public SerachPage se;
 	
-	
-	@BeforeMethod
-	public void configBm() throws Throwable
-	{
-		System.out.println("login ===");
-		String Url=p.getDataProperty("url");
-		String Username=p.getDataProperty("username");
-		String Password=p.getDataProperty("password");
-		driver.get(Url);
-		LoginPage l=new LoginPage(driver);
-		l.login(Username, Password);
-	}
-
-	
-	@AfterMethod
-	public void configAm()
-	{
-		
-	
-	
-	}
-	
-	
-	@BeforeClass(groups="smokeTest")
+	@BeforeClass()
 	public void confiBC() throws Throwable
 	{
 		System.out.println("lancu browser");
 		String Browser=p.getDataProperty("browser");
-		
+		//String Browser=browser;
 		
 	     if(Browser.equals("chrome"))
 	     {
@@ -73,27 +56,54 @@ public class BaseClass {
 	     }
 	     sdriver=driver;
 	     ObjectUtility.setDriver(driver);
-	     
+	    
 	}
-	@AfterClass(groups="smokeTest")
+	
+	@BeforeMethod()
+	public void configBm() throws Throwable
+	{
+		System.out.println("login ===");
+		
+		 String Url=p.getDataProperty("url");
+			String Username=p.getDataProperty("username");
+			String Password=p.getDataProperty("password");
+			LoginPage l=new LoginPage(driver);
+			driver.get(Url);
+			driver.manage().window().maximize();
+		    l.login(Username, Password);
+		    h=new HomePage(sdriver);
+		    se=new SerachPage(sdriver);
+	}
+	
+
+	@AfterMethod
+	public void configAm()
+	{
+		
+		
+	h.logout();
+	
+	}
+	
+	//@Parameters("BROWSER")
+	
+	@AfterClass()
 	public void configAC()
 	{
 		System.out.println("close browser");
 		driver.close();
 	}
 
-  @BeforeSuite(groups="smokeTest")
-  public void config()
-  {
-  	System.out.println(" open database connection");
-  	
-  }
-  @AfterSuite(groups="smokeTest")
-  public void configAS()
-  {
-  	System.out.println(" close database connection");
-  
-  }
-
-
+   @BeforeSuite()
+   public void config()
+   {
+   	System.out.println(" open database connection");
+   	
+   }
+   @AfterSuite()
+   public void configAS()
+   {
+   	System.out.println(" close database connection");
+   
+   }
 }

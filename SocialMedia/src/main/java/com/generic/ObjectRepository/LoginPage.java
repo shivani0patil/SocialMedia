@@ -9,11 +9,6 @@ public class LoginPage {
 	
 	
 	 WebDriver driver=null;
-		public LoginPage(WebDriver driver)
-		{
-		   this.driver=driver;	
-		   PageFactory.initElements(driver,this);
-		}
 		
 		
 		@FindBy(xpath="//input[@name='username']")
@@ -25,12 +20,32 @@ public class LoginPage {
 		@FindBy(xpath="//div[text()='Log in']")
 		private WebElement LoginButton;
 		
-		
-		public void login(String user,String pass) {
+		public LoginPage(WebDriver driver)
+		{
+		   this.driver=driver;	
+		   PageFactory.initElements(driver,this);
+		}
+
+		public WebElement getUsername() {
+			return username;
+		}
+
+
+		public WebElement getPassword() {
+			return password;
+		}
+
+
+		public void login(String user,String pass) throws InterruptedException {
 			 username.sendKeys(user);
 			 password.sendKeys(pass);
+			 Thread.sleep(4000);
 			 LoginButton.click();
 			
+		}
+
+		public WebElement getLoginButton() {
+			return LoginButton;
 		}
 
 }
