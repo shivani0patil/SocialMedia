@@ -15,15 +15,19 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
+import com.generic.FileUtiity.ExcelUtility;
 import com.generic.FileUtiity.PropertyFile;
+import com.generic.WebUtility.JavaUtility;
 import com.generic.WebUtility.ObjectUtility;
+import com.generic.WebUtility.WebDriverUtility;
 import com.generic.ObjectRepository.*;
 
 
 public class BaseClass {
-	
-	
-	PropertyFile p=new PropertyFile();
+	public WebDriverUtility wlib=new WebDriverUtility();
+	public ExcelUtility excel=new ExcelUtility();
+	public JavaUtility java=new JavaUtility();
+	public PropertyFile p=new PropertyFile();
 	public WebDriver driver=null;
 	static  WebDriver  sdriver;
 	public HomePage h;

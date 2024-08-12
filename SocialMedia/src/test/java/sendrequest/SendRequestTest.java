@@ -30,10 +30,7 @@ public class SendRequestTest extends BaseClass {
 	//WebDriver driver =new ChromeDriver();
 	 HomePage home=new HomePage(driver);
 
-	 ExcelUtility excel=new ExcelUtility();
-	 JavaUtility java=new JavaUtility();
-	 PropertyFile p=new PropertyFile();
-	LoginPage l=new LoginPage(driver);
+	
 		
 	
 	@Test
