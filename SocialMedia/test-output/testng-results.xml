@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-08-12T13:24:19 IST" name="Default suite" finished-at="2024-08-12T13:25:04 IST" duration-ms="44334">
+    <groups>
+    </groups>
+    <test started-at="2024-08-12T13:24:19 IST" name="Default test" finished-at="2024-08-12T13:25:04 IST" duration-ms="44334">
+      <class name="message.SendMessageTest">
+        <test-method is-config="true" signature="config()[pri:0, instance:message.SendMessageTest@1573f9fc]" started-at="2024-08-12T13:24:19 IST" name="config" finished-at="2024-08-12T13:24:19 IST" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- config -->
+        <test-method is-config="true" signature="confiBC()[pri:0, instance:message.SendMessageTest@1573f9fc]" started-at="2024-08-12T13:24:19 IST" name="confiBC" finished-at="2024-08-12T13:24:22 IST" duration-ms="2344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confiBC -->
+        <test-method is-config="true" signature="configBm()[pri:0, instance:message.SendMessageTest@1573f9fc]" started-at="2024-08-12T13:24:22 IST" name="configBm" finished-at="2024-08-12T13:24:28 IST" duration-ms="6014" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBm -->
+        <test-method signature="sendMessage()[pri:0, instance:message.SendMessageTest@1573f9fc]" started-at="2024-08-12T13:24:28 IST" name="sendMessage" finished-at="2024-08-12T13:24:59 IST" duration-ms="31668" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendMessage -->
+        <test-method is-config="true" signature="configAm()[pri:0, instance:message.SendMessageTest@1573f9fc]" started-at="2024-08-12T13:24:59 IST" name="configAm" finished-at="2024-08-12T13:25:03 IST" duration-ms="4045" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAm -->
+        <test-method is-config="true" signature="configAC()[pri:0, instance:message.SendMessageTest@1573f9fc]" started-at="2024-08-12T13:25:03 IST" name="configAC" finished-at="2024-08-12T13:25:04 IST" duration-ms="225" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAC -->
+        <test-method is-config="true" signature="configAS()[pri:0, instance:message.SendMessageTest@1573f9fc]" started-at="2024-08-12T13:25:04 IST" name="configAS" finished-at="2024-08-12T13:25:04 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAS -->
+      </class> <!-- message.SendMessageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

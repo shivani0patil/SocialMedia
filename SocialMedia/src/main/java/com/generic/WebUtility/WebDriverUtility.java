@@ -16,12 +16,12 @@ public class WebDriverUtility {
 
 	public void waitForPageImplicity(WebDriver driver)
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
 	}
 	
 	public void waitImplicite(WebDriver driver,WebElement element)
 	{
-		WebDriverWait wit=new WebDriverWait(driver, Duration.ofSeconds(16));
+		WebDriverWait wit=new WebDriverWait(driver, Duration.ofSeconds(5000));
 		wit.until(ExpectedConditions.visibilityOf(element));
 	}
 	

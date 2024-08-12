@@ -26,8 +26,9 @@ public class LoginPage {
 		private WebElement LoginButton;
 		
 		
-		public void login(String user,String pass) {
-			 username.sendKeys(user);
+		public void login(String user,String pass) throws InterruptedException {
+			Thread.sleep(3000);
+			username.sendKeys(user);
 			 password.sendKeys(pass);
 			 LoginButton.click();
 			
